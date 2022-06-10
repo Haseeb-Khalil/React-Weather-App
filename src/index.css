@@ -104,25 +104,25 @@ h3 {
 }
 
 .app .forCast {
+  /* display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.7rem; */
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  /* display: grid;
-  grid-template-columns: (2, 1fr);
-  gap: 1rem; */
   text-align: center;
-  /* width: 100%;
-  margin: 1rem auto;
-  padding: 1rem;
-  border-radius: 12px;
-  background-color: rgba(255, 255, 255, 0.3); */
 }
-.day__one,.day__two{
+
+.day__one,
+.day__two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.7rem;
   margin: 1rem;
-  width:fit-content;
+  width: fit-content;
   padding: 0.5rem;
   border-radius: 12px;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.25);
 }
 .bold {
   font-weight: 700;
@@ -132,10 +132,27 @@ img {
   width: 90px;
 }
 
+.forcast__icon {
+  width: 80px;
+}
+
+.date {
+  margin-bottom: 1rem;
+}
+
 /* =========================MEDIA QUERY FOR TABLETS========================== */
 
-@media screen and (max-width: 900px) {
-
+@media screen and (max-width: 1000px) {
+  .app .top {
+    margin-top: 15%;
+    margin-bottom: 3rem;
+  }
+  .app .bottom {
+    margin-top: 3rem;
+  }
+  .app .forCast {
+    margin-top: 3rem;
+  }
 }
 
 /* =========================MEDIA QUERY FOR PHONES========================== */
@@ -151,14 +168,17 @@ img {
   }
 
   h3 {
-    font-size: 1rem;
-    font-weight: 300;
+    font-size: 1.2rem;
+    font-weight: 500;
   }
   .small {
     font-size: 1rem;
     font-weight: 250;
   }
-    .app .top {
-        margin-bottom: 3rem;
-    }
+  .app .top {
+    margin-bottom: 2rem;
+  }
+  .app .bottom {
+    margin-top: 1rem;
+  }
 }

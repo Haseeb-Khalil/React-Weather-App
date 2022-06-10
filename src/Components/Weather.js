@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-// import { TbTemperatureCelsius } from "react-icons/tb";
+
 import Search from "./Search";
 import Location from "./Location";
 import Temperature from "./Temperature";
@@ -15,7 +15,6 @@ import DayOne from "./DayOne";
 import DayTwo from "./DayTwo";
 
 function Weather({ data, setData, location, setLocation }) {
-  // const url = `https://api.weatherapi.com/v1/current.json?key=78936007682e4b1e9c1112312223105&q=${location}&aqi=no`;
   const url = `http://api.weatherapi.com/v1/forecast.json?key=78936007682e4b1e9c1112312223105&q=${location}&days=3&aqi=no&alerts=no
 `;
 
@@ -66,6 +65,7 @@ function Weather({ data, setData, location, setLocation }) {
             </div>
             <div className="forCast">
               <DayOne
+                icon={data.forecast.forecastday[1].day.condition.icon}
                 date={data.forecast.forecastday[1].date}
                 maxTemp={data.forecast.forecastday[1].day.maxtemp_c}
                 condition={data.forecast.forecastday[1].day.condition.text}
@@ -73,6 +73,7 @@ function Weather({ data, setData, location, setLocation }) {
                 sunset={data.forecast.forecastday[1].astro.sunset}
               />
               <DayTwo
+                icon={data.forecast.forecastday[2].day.condition.icon}
                 date={data.forecast.forecastday[2].date}
                 maxTemp={data.forecast.forecastday[2].day.maxtemp_c}
                 condition={data.forecast.forecastday[2].day.condition.text}
