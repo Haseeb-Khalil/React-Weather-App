@@ -42,7 +42,10 @@ function Weather({ data, setData, location, setLocation }) {
           <div className="container">
             <div className="top">
               <div className="top__left">
-                <Location location={data.location.name} />
+                <Location
+                  location={data.location.name}
+                  country={data.location.country}
+                />
                 <Temperature temperature={data.current.temp_c} />
               </div>
               <div className="top__right">
